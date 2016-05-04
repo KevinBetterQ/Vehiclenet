@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.whw.vehiclenet.MainActivity">
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="地图服务"
+        android:id="@+id/button1_map"
+        android:textSize="25dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="预约加油"
+        android:id="@+id/button2_gas"
+        android:textSize="25dip"
+        android:layout_alignTop="@+id/button1_map"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="路线规划"
+        android:id="@+id/button3_route"
+        android:textSize="25dip"
+        android:layout_alignTop="@+id/button4_cars"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="车辆维护"
+        android:id="@+id/button4_cars"
+        android:textSize="25dip"
+        android:layout_marginTop="98dp"
+        android:layout_alignLeft="@+id/button2_gas"
+        android:layout_alignStart="@+id/button2_gas" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="违章查询"
+        android:id="@+id/button5_llleagl"
+        android:textSize="25dip"
+        android:layout_alignTop="@+id/button6_weather"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="其他服务"
+        android:id="@+id/button6_weather"
+        android:textSize="25dip"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/button4_cars"
+        android:layout_alignLeft="@+id/button4_cars"
+        android:layout_alignStart="@+id/button4_cars" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="个人信息"
+        android:id="@+id/button7_person"
+        android:textSize="25dip"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/button9_order"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="汽车信息"
+        android:id="@+id/button8_infocars"
+        android:textSize="25dip"
+        android:layout_alignTop="@+id/button9_order"
+        android:layout_alignLeft="@+id/button6_weather"
+        android:layout_alignStart="@+id/button6_weather" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="我的订单"
+        android:id="@+id/button9_order"
+        android:textSize="25dip"
+        android:layout_below="@+id/button5_llleagl"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
