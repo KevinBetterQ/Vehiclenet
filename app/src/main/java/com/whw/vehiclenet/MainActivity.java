@@ -70,9 +70,9 @@ public class MainActivity extends Activity {
             {
 			/* 地图服务模块 */
                 case R.id.button1_map:
-
+                    if (checkNet()) {
                         intent = new Intent(context, OpenMapActivity.class);
-
+                    }
                     break;
 
 			/* 预约加油模块 */

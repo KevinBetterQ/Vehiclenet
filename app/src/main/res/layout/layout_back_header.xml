@@ -14,12 +14,22 @@
         android:src="@drawable/btn_back" />
 
 
+    <ImageView
+        android:id="@+id/imageView_head_lesgo"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/textView_head_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/imageView_head_lesgo"
         android:layout_toRightOf="@id/imageView_head_back"
         android:gravity="center"
         android:text="自定义文字"
