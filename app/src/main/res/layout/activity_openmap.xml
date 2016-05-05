@@ -8,6 +8,14 @@
     android:layout_height="55dp"
     layout="@layout/layout_back_header" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/mylocation"
+        android:layout_gravity="right" />
+
     <com.baidu.mapapi.map.MapView
         android:id="@+id/bmapView"
         android:layout_width="fill_parent"
