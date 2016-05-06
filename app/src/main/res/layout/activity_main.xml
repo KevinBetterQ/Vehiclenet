@@ -93,4 +93,13 @@
         android:layout_below="@+id/button5_llleagl"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="二维码测试"
+        android:id="@+id/button10_qrcode"
+        android:textSize="25dip"
+        android:layout_alignTop="@+id/button7_person"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

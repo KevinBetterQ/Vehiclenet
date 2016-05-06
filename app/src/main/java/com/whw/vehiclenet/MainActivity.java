@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
     private Button button_person = null;
     private Button button_infocars = null;
     private Button button_order = null;
+    private Button button_qrcode = null;
 
 
     @Override
@@ -60,6 +61,9 @@ public class MainActivity extends Activity {
 
         button_weather = (Button) findViewById(R.id.button6_weather);
         button_weather.setOnClickListener(clickListener);
+
+        button_qrcode = (Button) findViewById(R.id.button10_qrcode);
+        button_qrcode.setOnClickListener(clickListener);
     }
 
     private class MyClickListener implements View.OnClickListener{
@@ -137,6 +141,14 @@ public class MainActivity extends Activity {
                     {
                         intent = new Intent(context, WeatherActivity.class);
                     }
+                    break;
+
+                /* 二维码测试 */
+                case R.id.button10_qrcode:
+//                    if (checkNet())
+//                    {
+                        intent = new Intent(context, QrcodeActivity.class);
+//                    }
                     break;
 
                 default:

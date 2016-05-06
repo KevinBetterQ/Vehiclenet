@@ -48,6 +48,11 @@
             android:name=".OpenMapActivity"
              >
         </activity>
+        <!-- 二维码界面 -->
+        <activity
+            android:name=".QrcodeActivity"
+            >
+        </activity>
 
         <service
             android:name="com.baidu.location.f"
