@@ -14,7 +14,7 @@ import com.whw.pubclass.PublicClass;
 public class MainActivity extends Activity {
 
     private Context context;
-    private Button button_map = null;
+    private Button button_map ;
     private Button button_gas = null;
     private Button button_route = null;
     private Button button_cars = null;
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         button_gas.setOnClickListener(clickListener);
 
         button_infocars = (Button) findViewById(R.id.button8_infocars);
-        button_gas.setOnClickListener(clickListener);
+        button_infocars.setOnClickListener(clickListener);
 
         button_llleagl = (Button) findViewById(R.id.button5_llleagl);
         button_llleagl.setOnClickListener(clickListener);

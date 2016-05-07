@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="13dp" >
+
+    <!-- 放大缩小按钮 -->
+
+    <LinearLayout
+        android:id="@+id/group_zoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="4dp"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/btn_zoomIn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/zoomin_bg"
+            android:clickable="true"
+            android:src="@drawable/zoom_in" />
+
+        <ImageButton
+            android:id="@+id/btn_zoomOut"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/zoomout_bg"
+            android:clickable="true"
+            android:src="@drawable/zoom_out" />
+    </LinearLayout>
+
+    <!-- 定位按钮 -->
+
+    <LinearLayout
+        android:id="@+id/group_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="3dp"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/btn_location"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/loc_bg"
+            android:clickable="true"
+            android:src="@drawable/loc_location" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -10,6 +10,15 @@ import android.net.NetworkInfo;
 import android.os.Environment;
 import android.widget.Toast;
 
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.Marker;
+import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.model.LatLng;
+import com.whw.vehiclenet.R;
+
 
 public class PublicClass
 {
@@ -17,6 +26,21 @@ public class PublicClass
 	 * 公共类维护常量 节点索引 字段
 	 */
 	public static int nodeIndex = -1;
+
+	/**
+	 * 公共类维护常量 节点 Marker 图标 字段
+	 */
+	public static Marker nodeMarker;
+
+	public static int EnumId = 0;
+
+	public static boolean shouldSearch;
+
+	/**
+	 * 山东科技大学经纬度定位点；
+	 *
+	 * **/
+	public static final LatLng LATLNG_SDKJ = new LatLng(36.009569, 120.130351);
 
 	/**
 	 * 读取当前SD卡状态
@@ -155,5 +179,29 @@ public class PublicClass
 	 * @return String
 	 *
 	 * **/
+	public static String getFileName(String path, String fileName, String format)
+	{
+		return getPathName(path) + "/" + fileName + "." + format;
+	}
+
+	/**
+	 * 添加 Marker 到地图
+	 *
+	 * @param latLng
+	 * @param mBaiduMap
+	 */
+	public static void setNodeMarker(LatLng latLng, BaiduMap mBaiduMap)
+	{
+		if (PublicClass.nodeMarker != null)
+		{
+			PublicClass.nodeMarker.remove();
+		}
+
+		BitmapDescriptor descriptor = BitmapDescriptorFactory
+				.fromResource(R.drawable.marker_icon);
+		OverlayOptions options = new MarkerOptions().position(latLng).icon(
+				descriptor);
+		PublicClass.nodeMarker = (Marker) mBaiduMap.addOverlay(options);
+	}
 
 }

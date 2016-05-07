@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 节点信息 -->
+
+        <include
+            android:id="@+id/group_node"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            layout="@layout/layout_toolbar_detail" />
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/group_node"
+            android:clickable="true" />
+
+        <include
+            android:id="@+id/include_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            layout="@layout/layout_loading_frame_anim" />
+
+        <include layout="@layout/layout_routeplan_header" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/group_node"
+            android:layout_marginBottom="10dp"
+            layout="@layout/layout_toolbar_header" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/view_Ambiguous"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7f2B3439"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_corners"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/ambiguousTextView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_corners_top"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:text="1233"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <ListView
+                android:id="@+id/ambiguousListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#ffffff"
+                android:cacheColorHint="#0000ff"
+                android:divider="#d8d8d8"
+                android:dividerHeight="0.5dp"
+                android:fadingEdgeLength="0dip"
+                android:listSelector="#ffffff"
+                android:scrollbars="none" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_Busline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7f2B3439"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_corners"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/buslineTextView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_corners_top"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:text="选择路线"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <ListView
+                android:id="@+id/buslineListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#ffffff"
+                android:cacheColorHint="#0000ff"
+                android:divider="#d8d8d8"
+                android:dividerHeight="0.5dp"
+                android:fadingEdgeLength="0dip"
+                android:listSelector="#ffffff"
+                android:scrollbars="none" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</merge>
