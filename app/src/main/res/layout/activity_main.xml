@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.whw.vehiclenet.MainActivity">
 
-
     <Button
         android:layout_width="150dp"
         android:layout_height="50dp"

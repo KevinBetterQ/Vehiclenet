@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 import com.baidu.mapapi.search.sug.SuggestionResult;
 import com.baidu.mapapi.search.sug.SuggestionSearch;
@@ -74,6 +75,7 @@ public class RoutePlanActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		SDKInitializer.initialize(getApplicationContext());
 		setContentView(R.layout.layout_routeplan_set);
 
 		// 上下文
@@ -88,15 +90,17 @@ public class RoutePlanActivity extends Activity
 		imageView_route_back = (ImageView) findViewById(R.id.imageView_route_back);
 		imageView_route_back.setOnClickListener(clickListener);
 
-		// 公交路线规划，设置默认为公交查询 TODO
+		// 公交路线规划。
 		imageView_route_bus = (ImageView) findViewById(R.id.imageView_route_bus);
 		imageView_route_bus.setOnClickListener(clickListener);
-		imageView_route_bus.setImageResource(R.drawable.route_bus_pressed);
-		routeMethod = "BUS";
 
-		// 自驾车路线规划
+
+
+		// 自驾车路线规划，设置默认为汽车查询
 		imageView_route_car = (ImageView) findViewById(R.id.imageView_route_car);
 		imageView_route_car.setOnClickListener(clickListener);
+		imageView_route_car.setImageResource(R.drawable.route_car_pressed);
+		routeMethod = "CAR";
 
 		// 步行路线规划
 		imageView_route_foot = (ImageView) findViewById(R.id.imageView_route_foot);

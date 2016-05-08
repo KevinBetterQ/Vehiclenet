@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,24 +19,35 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.whw.pubclass.PublicClass;
+import com.whw.pubclass.PublicLocModeClass;
+import com.whw.pubclass.PublicZoomClass;
 
 
 /**
  * Created by 10938 on 2016/5/3.
  */
-public class OpenMapActivity extends Activity implements View.OnClickListener {
+public class OpenMapActivity extends Activity {
 
+    //标题
     private TextView textView_head_title;
 
+    //返回按钮
+    private ImageView imageView_route_back;
+
+    // 定位控件
+    private ImageButton btn_location;
+    //实时交通按钮
+    private ImageButton btn_traffic;
 
     private MapView mMapView;
     private BaiduMap mBaiduMap;
     private Context context;
 
-    //界面按键
-    private Button mylocation_button;
+    MyClickListener clickListener = new MyClickListener();
 
     //定位相关
     private LocationClient mLocationClient;
@@ -51,15 +64,23 @@ public class OpenMapActivity extends Activity implements View.OnClickListener {
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_openmap);
 
-        mylocation_button= (Button) findViewById(R.id.mylocation);
-        mylocation_button.setOnClickListener(this);
         this.context = this;
+
         initView();//初始化地图
         initLocation();//初始化定位
 
-
         textView_head_title = (TextView) findViewById(R.id.textView_head_title);
         textView_head_title.setText("地图");
+
+        // 返回按钮
+        imageView_route_back = (ImageView) findViewById(R.id.imageView_head_back);
+        imageView_route_back.setOnClickListener(clickListener);
+        // 定位按钮
+        btn_location = (ImageButton) findViewById(R.id.btn_location);
+        btn_location.setOnClickListener(clickListener);
+        // 实时交通按钮
+        btn_traffic = (ImageButton) findViewById(R.id.traffic);
+        btn_traffic.setOnClickListener(clickListener);
     }
 
     private void initLocation() {
@@ -127,12 +148,42 @@ public class OpenMapActivity extends Activity implements View.OnClickListener {
         mBaiduMap.animateMapStatus(msu);
     }
 
-    @Override
-    public void onClick(View v) {
-        centerToMyLocation();//点击按钮定位到我的位置
+
+    // button 点击事件监听器
+    private class MyClickListener implements View.OnClickListener
+    {
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                //返回控件
+                case R.id.imageView_head_back:
+                    OpenMapActivity.this.finish();
+                    break;
+
+                //定位控件
+                case R.id.btn_location:
+                    centerToMyLocation();
+                    break;
+
+                //点击实时交通
+                case R.id.traffic:
+                    if(mBaiduMap.isTrafficEnabled())//判断是否已经打开实时交通
+                    {
+                        mBaiduMap.setTrafficEnabled(false);//关闭实时交通
+                        PublicClass.showToast(context, "实时交通(OFF)");
+                    }else
+                    {
+                        mBaiduMap.setTrafficEnabled(true);//打开实时交通
+                        PublicClass.showToast(context, "实时交通(ON)");
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
-
-
 
     private class MyLocationListener implements BDLocationListener
     {

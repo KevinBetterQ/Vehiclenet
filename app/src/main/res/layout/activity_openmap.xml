@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <include
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="55dp"
-    layout="@layout/layout_back_header" />
+    android:layout_height="match_parent" >
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/mylocation"
-        android:layout_gravity="right" />
 
     <com.baidu.mapapi.map.MapView
         android:id="@+id/bmapView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:clickable="true" />
 
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        layout="@layout/layout_back_header"
+        android:id="@+id/include" />
 
-</LinearLayout>
+    <!-- 定位按钮 -->
+
+    <LinearLayout
+        android:id="@+id/group_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="3dp"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_location"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/loc_bg"
+        android:clickable="true"
+        android:src="@drawable/loc_location"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/group_location"
+        android:layout_alignStart="@+id/group_location"
+        android:layout_marginBottom="56dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/traffic"
+        android:layout_below="@+id/include"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="13dp"
+        android:src="@mipmap/ic_launcher"/>
+
+
+</RelativeLayout>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -24,6 +25,8 @@ public class MainActivity extends Activity {
     private Button button_infocars = null;
     private Button button_order = null;
     private Button button_qrcode = null;
+
+    private long exitTime = 0;
 
 
     @Override
@@ -177,5 +180,30 @@ public class MainActivity extends Activity {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN)
+        {
+            if ((System.currentTimeMillis() - exitTime) > 2000)
+            {
+                PublicClass.showToast(context, "再按一次退出程序");
+                exitTime = System.currentTimeMillis();
+            } else
+            {
+                MainActivity.this.finish();
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("已退出系统");
     }
 }

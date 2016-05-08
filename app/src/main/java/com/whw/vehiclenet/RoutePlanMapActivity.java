@@ -167,9 +167,6 @@ public class RoutePlanMapActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_routeplan_map);
 
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.layout_routeplan_map);
-
 		// 当前上下文
 		this.context = this;
 
