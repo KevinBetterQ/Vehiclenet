@@ -1,5 +1,8 @@
 package com.whw.vehiclenet;
 
+import com.baidu.mapapi.search.poi.PoiNearbySearchOption;
+import com.baidu.mapapi.search.poi.PoiSearch;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +16,11 @@ public class Info implements Serializable
 	private String name;
 	private String distance;
 	private int zan;
+
+	// 兴趣点查询
+	private PoiSearch poiSearch;
+	private PoiNearbySearchOption option;
+	private String keyWord;
 
 	//ATM
 	public static List<Info> infos = new ArrayList<Info>();

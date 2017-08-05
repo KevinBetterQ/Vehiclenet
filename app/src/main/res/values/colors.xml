@@ -6,4 +6,5 @@
 
     <color name="listview_item_selected">#A8DFF4</color>
     <color name="listview_item_unselected">#ffffff</color>
+    <color name="color_page_white">#E6E6E6</color>
 </resources>

@@ -273,11 +273,13 @@ public class RoutePlanMapActivity extends Activity
 		 * **/
 		// include 标签，用于控制 loading 的显示与隐藏
 		include_loading = findViewById(R.id.include_loading);
-		imageView_loading = (ImageView) findViewById(R.id.imageView_loading);
+		//imageView_loading = (ImageView) findViewById(R.id.imageView_loading);
 		textView_loading = (TextView) findViewById(R.id.textView_loading);
-		AnimationDrawable animationDrawable = (AnimationDrawable) imageView_loading
-				.getDrawable();
-		animationDrawable.start();
+
+		//与加载图片动画有关(三行)
+		//AnimationDrawable animationDrawable = (AnimationDrawable) imageView_loading
+		//		.getDrawable();
+		//animationDrawable.start();
 
 		/**
 		 * 歧义列表相关，默认不显示
